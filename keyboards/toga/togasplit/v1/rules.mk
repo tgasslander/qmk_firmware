@@ -1,15 +1,15 @@
 # togasplit defaults
 
 # Keycode Options
-BOOTMAGIC_ENABLE        = full      # Virtual DIP switch configuration(
+BOOTMAGIC_ENABLE        = full
 MOUSEKEY_ENABLE         = no        # Mouse keys
 EXTRAKEY_ENABLE         = no        # Audio control and System control
 UNICODE_ENABLE          = no        # Unicode keycodes
 NKRO_ENABLE             = no        # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 
 # Debug Options
-CONSOLE_ENABLE          = no        # Console for debug
-COMMAND_ENABLE          = no        # Commands for debug and configuration
+CONSOLE_ENABLE          = yes        # Console for debug
+COMMAND_ENABLE          = yes        # Commands for debug and configuration
 
 # RGB Options
 RGBLIGHT_ENABLE         = no        # Enable global lighting effects. Do not enable with RGB Matrix

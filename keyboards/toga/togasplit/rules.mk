@@ -13,4 +13,8 @@ BOOTLOADER = caterina
 
 SPLIT_KEYBOARD = yes
 
+# Debugging
+CONSOLE_ENABLE = yes
+DEBUG_ENABLE = yes
+
 DEFAULT_FOLDER = toga/togasplit/v1

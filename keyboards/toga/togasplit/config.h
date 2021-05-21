@@ -22,9 +22,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM 150
 
-/* Select hand configuration */
 #define SOFT_SERIAL_PIN D2
-#define EE_HANDS
+#define SELECT_SOFT_SERIAL_SPEED 1
+// #define SPLIT_USB_DETECT
+
+/* Select hand configuration */
+// #define EE_HANDS
 
 /* key matrix size */
 // Rows are doubled-up 
