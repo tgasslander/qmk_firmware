@@ -1,9 +1,9 @@
 #include QMK_KEYBOARD_H
 
-//#ifdef PROTOCOL_LUFA
+#ifdef PROTOCOL_LUFA
 	#include "lufa.h"
 	#include "split_util.h"
-//#endif
+#endif
 
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
@@ -19,29 +19,23 @@ enum layer_number {
 #define QWERTY   DF(_QWERTY)
 #define FN       MO(_FN)
 
-enum custom_keycodes {
-  RGBRST = SAFE_RANGE,
-  RGB_MENU
-};
-
 void keyboard_pre_init_user(void) {
-	print("keyboard_pre_init_user");
-	setPinOutput(B0);
-	setPinOutput(D5);
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	print("process_record_user");
-	writePinHigh(B0);
-	writePinHigh(D5);
-	return true;
-}
-void keyboard_post_init_user(void) {
-  print("keyboard_post_init_user");
-  // Customise these values to desired behaviour
+  print("keyboard_pre_init_user");
+  setPinOutput(B0);
   debug_enable=true;
   debug_matrix=true;
   debug_keyboard=true;
+  setPinOutput(D5);
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  print("process_record_user");
+  writePinLow(B0);
+  writePinHigh(D5);
+  return true;
+}
+void keyboard_post_init_user(void) {
+  print("keyboard_post_init_user");
 }
 
 
@@ -72,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T, KC_LBRC,   KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS, \
     FN_CAPS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G, KC_LPRN,   KC_RPRN, KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT, \
     KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, KC_LCBR,   KC_RCBR, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,\
-                                        KC_LGUI, KC_LCTL, KC_LOPT,   KC_SPC,  KC_RCTL,  KC_ENT \
+                                        KC_LGUI, KC_LCTL, KC_LOPT,   KC_ENT,  KC_RCTL,  KC_SPC \
   ),
 
   /* FN
@@ -85,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
    * |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |
    * |------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-   * |      |      |      |RGBMOD|      |      |      |  |      |      | PLAY | NEXT | MUTE | VOL- | VOL+ |
+   * |      |      |      |      |      |      |      |  |      |      | PLAY | NEXT | MUTE | VOL- | VOL+ |
    * `------+------+------+------+------+------+------|  |------+------+------+------+------+------+------'
    *                                    |      |      |  |      |      |
    *                                    `-------------'  `-------------'
