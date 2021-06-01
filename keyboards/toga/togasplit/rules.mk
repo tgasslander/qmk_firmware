@@ -12,6 +12,7 @@ MCU = atmega32u4
 BOOTLOADER = caterina
 
 SPLIT_KEYBOARD = yes
+SERIAL_DRIVER = bitbang
 
 LAYOUTS = default
 

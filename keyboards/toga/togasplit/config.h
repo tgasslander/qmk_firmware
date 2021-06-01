@@ -20,11 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
-#define TAPPING_TERM 150
-
 #define SOFT_SERIAL_PIN D2
 #define SELECT_SOFT_SERIAL_SPEED 1
-// #define SPLIT_USB_DETECT
 
 /* Select hand configuration */
 #define EE_HANDS
@@ -33,12 +30,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Rows are doubled-up 
 #define MATRIX_ROWS 10
 #define MATRIX_ROW_PINS { B1, B3, B2, B6, B5 }
-// #define MATRIX_ROW_PINS_RIGHT { D7, E6, B4, B5, B6 }
 
 // wiring of each half
 #define MATRIX_COLS 7
 #define MATRIX_COL_PINS { B4, E6, D7, C6, D4, D0, D1 }
-// #define MATRIX_COL_PINS_RIGHT { F4, F5, F6, F7, B1, B3, B2 }
 
 #define DIODE_DIRECTION COL2ROW
 
