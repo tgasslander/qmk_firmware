@@ -1,7 +1,7 @@
 # togasplit defaults
 
 # Keycode Options
-BOOTMAGIC_ENABLE        = full
+BOOTMAGIC_ENABLE        = no
 MOUSEKEY_ENABLE         = no        # Mouse keys
 EXTRAKEY_ENABLE         = no        # Audio control and System control
 UNICODE_ENABLE          = no        # Unicode keycodes
