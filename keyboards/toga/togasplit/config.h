@@ -20,11 +20,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
-#define SOFT_SERIAL_PIN D2
-#define SELECT_SOFT_SERIAL_SPEED 1
+// #define USE_SERIAL
+
+// #undef SOFT_SERIAL_PIN
+// #define SOFT_SERIAL_PIN D2
+// #define SELECT_SOFT_SERIAL_SPEED 3
+
+#define USE_I2C
 
 /* Select hand configuration */
 #define EE_HANDS
+// #define SPLIT_USB_DETECT
+// #define MASTER_LEFT
 
 /* key matrix size */
 // Rows are doubled-up 
@@ -33,7 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // wiring of each half
 #define MATRIX_COLS 7
-#define MATRIX_COL_PINS { B4, E6, D7, C6, D4, D0, D1 }
+#define MATRIX_COL_PINS { B4, E6, D7, C6, D4, F5, F4 }
 
 #define DIODE_DIRECTION COL2ROW
 
